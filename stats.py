@@ -11,3 +11,20 @@ def get_chars_dict(book_text: str):
         else:
             character_count[c] = 1
     return character_count
+
+def sort_on(dict):
+    return dict["num"]
+
+def sort_chars_dict(dictionary: dict):
+    char_stats = []
+
+    for char in dictionary:
+        stat = {}
+        stat["char"] = char
+        stat["num"] = dictionary[char]
+        char_stats.append(stat)
+
+    char_stats.sort(reverse=True, key=sort_on)
+
+    return char_stats
+
